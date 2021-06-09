@@ -24,8 +24,7 @@ header {
     background-color: #2E3A46;
         & img {
             height: 50px;
-            margin-left: 30px;
+            margin-left: 10px;
         }  
-} 
-    
+}
 </style>
