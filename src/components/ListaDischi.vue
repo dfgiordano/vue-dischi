@@ -3,7 +3,7 @@
         <div class="wrapper">
             <div class="disco">
                 <div class="row">
-                    <div v-for="disco in dischi" :key="disco.author" class="col-6 col-md-4 col-lg-2">
+                    <div v-for="disco in dischi" :key="disco.author" class="col-xs-6 col-md-4 col-lg-2">
                         <Disco :cd="disco"/>
                     </div>
                 </div>
@@ -48,10 +48,9 @@ export default {
     }
     .wrapper {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         margin : auto;
         height: 80%;
-        width: 90%;
+        width: 70%;
     }
 </style>

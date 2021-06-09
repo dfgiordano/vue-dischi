@@ -1,14 +1,10 @@
 <template>
-<div wrapper>
     <div class="carta">
         <img :src="cd.poster" alt="cover">
         <h3>{{ cd.title }}</h3>
         <h5> {{ cd.author }}</h5>
         <h6> {{ cd.year }}</h6>
     </div>
-</div>
-
-    
 </template>
 
 <script>
@@ -19,39 +15,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/variables';
+    * {
+        margin:0;
+    }
     .carta {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        height: 300px;
-        width: 200px;
+        flex-direction: column;
+        align-items: center;
+        height: 320px;
+        width: 180px;
         margin-bottom: 20px;
-        border: 1px solid white;
+        background-color: $backgroundColor;
             h3 {
-                text-align: center;;
+                display:block;
+                text-align: center;
                 text-transform: uppercase;
-                font-size: 20px;
-                color: white;
+                font-size: 22px;
+                margin-top: 20px;
+                color: $titleColor;
             }
             h5 {
-                text-align: center;;
-                color: #78746D;
+                text-align: center;
+                color: $descriptionColor;
+                margin-top: 10px;
                 font-size: 16px;
             }
             h6 {
                 display: block;
-                color: #78746D;
+                text-align: center;
+                color: $descriptionColor;
                 font-size: 16px;
             }
             img {
-                text-align: center;;
-                display: inline-block;
+                text-align: center;
+                display: block;
                 margin-top: 20px;
-                height: 100px;
-                width: 100px;
+                height: 140px;
+                width: 140px;
             }
-    }
-    .wrapper {
-        display:flex;
     }
 </style>
