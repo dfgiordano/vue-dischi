@@ -3,8 +3,8 @@
         <div class="wrapper">
             <div class="disco">
                 <div class="row">
-                    <div class="col-6 col-md-4 col-lg-2 col-offset-lg-1">
-                        <Disco />
+                    <div v-for="disco in dischi" :key="disco.author" class="col-6 col-md-4 col-lg-2">
+                        <Disco :cd="disco"/>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ export default {
             .then(
                 (result) => {
                     console.log(result.data)
-                    this.dischi = result.data;
+                    this.dischi = result.data.response;
                 } 
             )
     }
@@ -49,9 +49,9 @@ export default {
     .wrapper {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         margin : auto;
         height: 80%;
-        width: 65%;
-        background-color: white;
+        width: 90%;
     }
 </style>
