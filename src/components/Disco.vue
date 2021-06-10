@@ -1,10 +1,20 @@
 <template>
     <div class="carta">
-        <img :src="cd.poster" alt="cover">
-        <h3>{{ cd.title }}</h3>
-        <h5> {{ cd.author }}</h5>
-        <h6> {{ cd.year }}</h6>
+        <a href="#">
+            <img :src="cd.poster" alt="cover">
+        </a>
+        <a href="#">
+            <h3>{{ cd.title }}</h3>
+        </a>
+        <a href="#">
+            <h5> {{ cd.author }}</h5>
+        </a>
+        <a href="#">
+            <h6> {{ cd.year }}</h6>
+        </a>
+        
     </div>
+    
 </template>
 
 <script>
@@ -16,36 +26,54 @@ export default {
 
 <style lang="scss" scoped>
 @import '../style/variables';
+
     * {
         margin:0;
+    }
+    a {
+        text-decoration: none;
     }
     .carta {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 320px;
-        width: 180px;
+        width: calc(100% / 180px);
         margin-bottom: 20px;
         background-color: $backgroundColor;
             h3 {
                 display:block;
                 text-align: center;
                 text-transform: uppercase;
-                font-size: 22px;
+                line-height: 24px;
+                font-size: 18px;
                 margin-top: 20px;
                 color: $titleColor;
+                    &:hover {
+                        color:#45D760;
+                    }
             }
             h5 {
                 text-align: center;
                 color: $descriptionColor;
-                margin-top: 10px;
+                margin: 10px 0;
                 font-size: 16px;
+                    &:hover {
+                        color: white;
+                        text-decoration: underline white;
+
+            }
             }
             h6 {
                 display: block;
                 text-align: center;
                 color: $descriptionColor;
-                font-size: 16px;
+                font-size: 14px;
+                    &:hover {
+                        color: white;
+                        text-decoration: underline white;
+
+            }
             }
             img {
                 text-align: center;
@@ -53,6 +81,9 @@ export default {
                 margin-top: 20px;
                 height: 140px;
                 width: 140px;
+                    &:hover {
+                        opacity: 0.5;
+                    }
             }
     }
 </style>
