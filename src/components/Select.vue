@@ -1,11 +1,11 @@
 <template>
     <form>
-        <select name="Generi" id=""
-        @change="$emit('cambiaGenere')">
+        <select name="Generi" id="" v-model="selected"
+        @change="$emit('cambiaGenere', selected)">
             <option value="Tutti">Seleziona un genere</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
-            <option value="Jazz">Jazz</option>
+            <option value="Jazz">Jazz</option>  
             <option value="Metal">Metal</option>
         </select>
     </form>
@@ -14,7 +14,11 @@
 <script>
 export default {
     name: "Select",
-    
+    data: function() {
+        return {
+            selected: 'Tutti',
+        }
+    }
 }
 </script>
 

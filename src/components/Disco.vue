@@ -12,9 +12,7 @@
         <a href="#">
             <h6> {{ cd.year }}</h6>
         </a>
-        
     </div>
-    
 </template>
 
 <script>
@@ -27,18 +25,15 @@ export default {
 <style lang="scss" scoped>
 @import '../style/variables';
 
-    * {
-        margin:0;
-    }
     a {
         text-decoration: none;
     }
     .carta {
+        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 320px;
-        width: calc(100% / 180px);
         margin-bottom: 20px;
         background-color: $backgroundColor;
             h3 {
@@ -61,8 +56,7 @@ export default {
                     &:hover {
                         color: white;
                         text-decoration: underline white;
-
-            }
+                    }
             }
             h6 {
                 display: block;
@@ -72,8 +66,7 @@ export default {
                     &:hover {
                         color: white;
                         text-decoration: underline white;
-
-            }
+                    }
             }
             img {
                 text-align: center;

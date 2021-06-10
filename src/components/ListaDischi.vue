@@ -1,11 +1,11 @@
 <template>
     <div class="background">
         <Select 
-        @change="cambiaGenere=scelta()"/>
+        @:cambiaGenere="scelta"/>
         <div class="wrapper">
             <div class="disco container">
                 <div class="row">
-                    <div v-for="disco in dischi" :key="disco.author" class="col-xs-6 col-md-4 col-lg-2">
+                    <div v-for="disco in dischi" :key="disco.author">
                         <Disco :cd="disco"/>
                     </div>
                 </div>
@@ -32,8 +32,14 @@ export default {
         }
     },
     methods: {
-        scelta : function () {
-        console.log("cam")
+        scelta : function (selected) { // selected
+        console.log("selected")
+        // forEach x filtrare i dischi che hanno genre = selected
+        this.dischi.forEach (
+            () => {
+                this.dischi.genre == selected 
+            }
+        )
         }
     },   
     created () {
@@ -54,7 +60,14 @@ export default {
         height: calc(100vh - 80px);
         background-color: #1E2D3B;
     }
-    
+    .row {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+    .row div {
+        width: 20%;
+    }
     .wrapper {
         display: flex;
         flex-wrap: wrap;
